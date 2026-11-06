@@ -2,12 +2,14 @@
 """Generate the English, paper-style OriDynamic homepage. Standard library only."""
 import json
 import base64
+import os
 import textwrap
 from hashlib import sha256
 from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parent
+SITE_URL = os.environ.get('SITE_URL', 'https://lg-frontierai.github.io/homepage/oridynamic/').rstrip('/') + '/'
 DATA = json.loads((ROOT / 'content.json').read_text())
 SITE_GROUP = 'LGLab Frontier AI Group'
 OUT = ROOT / 'dist'
@@ -266,9 +268,9 @@ html=f'''<!doctype html>
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website"><meta property="og:title" content="{escape(DATA['title'],quote=True)}">
 <meta property="og:description" content="{escape(DATA['suggested_hero']['description_en'],quote=True)}">
-<meta property="og:image" content="https://oridynamics.github.io/assets/social-preview.png">
-<meta property="og:url" content="https://oridynamics.github.io/">
-<link rel="canonical" href="https://oridynamics.github.io/">
+<meta property="og:image" content="{escape(SITE_URL + 'assets/social-preview.png', quote=True)}">
+<meta property="og:url" content="{escape(SITE_URL, quote=True)}">
+<link rel="canonical" href="{escape(SITE_URL, quote=True)}">
 <link rel="icon" href="favicon.ico?v=oridynamic-v6-1" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=oridynamic-v6-1">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=oridynamic-v6-1">
@@ -362,6 +364,6 @@ html=f'''<!doctype html>
 </body></html>'''
 (OUT/'index.html').write_text(html)
 (OUT/'.nojekyll').write_text('')
-(OUT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: https://oridynamics.github.io/sitemap.xml\n')
-(OUT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://oridynamics.github.io/</loc></url></urlset>\n')
+(OUT/'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n')
+(OUT/'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{escape(SITE_URL)}</loc></url></urlset>\n')
 print('Built English homepage: dist/index.html')

@@ -2,7 +2,9 @@
 
 当前标题：**Toward a World Model for Biomolecular Dynamics through Latent Ensemble Decomposition with OriDynamic**
 
-官网：<https://oridynamics.github.io/>
+组织网站：<https://lg-frontierai.github.io/homepage/oridynamic/>
+
+原官网：<https://oridynamics.github.io/>
 
 ## 文件分工
 
@@ -33,11 +35,15 @@ python3 oridynamic/preview_server.py --port 4187
 
 现有 SVG 科学配图、视频和封面已包含，无需原始 PDF 或原制作机器即可重建网页。替换视频时同步更新配置中的时长、尺寸与 SHA-256；`application-cases.json` 的哈希用于视频链接缓存刷新。
 
-## 发布状态
+## 发布
 
-网页资源已与原官网发布提交 `5e98e84a3dfa700671224eb8268491d68e2f8dd5` 核对一致。当前导入只建立源码仓库，尚未启用从本仓库到原官网的自动同步。
+将主页修改推送到本仓库 `main` 后，GitHub Actions 自动构建并发布到 <https://lg-frontierai.github.io/homepage/oridynamic/>。
 
-`dist/` 中的网页保持当前正式站点地址。官网发布仓库为 <https://github.com/oridynamics/oridynamics.github.io>。
+`build.py` 默认使用组织项目网址；可通过 `SITE_URL` 设置另一个发布地址。图片、视频、样式和交互脚本使用相对路径，支持子目录部署。`build_pages.py` 只将网页引用的资源复制到 `_site/oridynamic/`，并检查引用文件是否齐全。
+
+原官网 <https://oridynamics.github.io/> 仍由其独立仓库发布，本工作流不会同步更新该地址。
+
+首次导入与原官网提交 `5e98e84a3dfa700671224eb8268491d68e2f8dd5` 一致，历史校验清单保存在 `snapshot.json`。
 
 ## 署名与资源许可
 
