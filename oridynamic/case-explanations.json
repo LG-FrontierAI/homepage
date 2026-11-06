@@ -1,0 +1,432 @@
+{
+  "mbp": {
+    "overview": "Maltose-binding protein captures sugars in the bacterial periplasm and delivers them to the MalFGK₂ importer. Its two domains surround a binding cleft whose accessibility changes as the domains move.",
+    "overview_refs": [
+      1,
+      2
+    ],
+    "steps": [
+      {
+        "title": "Capture",
+        "text": "The interdomain cleft accommodates a sugar; domain closure can enclose the ligand.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Deliver",
+        "text": "MBP engages MalFGK₂ and opens during transfer of the sugar to the membrane transporter.",
+        "refs": [
+          2
+        ]
+      },
+      {
+        "title": "Transport",
+        "text": "ATP-driven changes in the transporter support uptake into the cytoplasm. MBP provides recognition and delivery; the transporter supplies the ATP-powered transport cycle.",
+        "refs": [
+          2
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "The primary reference pair is 3PUW and 1FQC. Blue and purple denote two conformational states, with experimental structures in gray. The RMSD plot measures similarity to each reference; the pocket surfaces and W62–W340 distance illustrate cleft opening.",
+        "refs": [
+          4,
+          5
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The introductory cartoon explains sugar recognition and delivery to the transporter. The structural sequence uses 3PUW and 1FQC as the primary pair; 1FQB separately supplies the maltotriitol binding pose.",
+        "refs": [
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "interpretation": "The structural morph connects independently predicted conformations for viewing. Sugar approach is illustrative. Maltotriitol is a reduced sugar analogue used to show binding, not evidence that this analogue is transported.",
+    "references": [
+      {
+        "label": "Duan et al. (2001). MBP structures with reduced oligosaccharides.",
+        "detail": "Primary publication for 1FQC and 1FQB. J. Mol. Biol. 306, 1115–1126. DOI: 10.1006/jmbi.2001.4456",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11237621/",
+        "pdb_ids": [
+          "1FQC",
+          "1FQB"
+        ]
+      },
+      {
+        "label": "Oldham & Chen (2011). Snapshots of the maltose transporter during ATP hydrolysis.",
+        "detail": "Primary publication for 3PUW. Proc. Natl. Acad. Sci. USA 108, 15152–15156. DOI: 10.1073/pnas.1108858108",
+        "url": "https://doi.org/10.1073/pnas.1108858108",
+        "pdb_ids": [
+          "3PUW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1FQB",
+        "detail": "Supplementary open-form MBP–maltotriitol structure used for the analogue pose.",
+        "url": "https://www.rcsb.org/structure/1FQB",
+        "pdb_ids": [
+          "1FQB"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 3PUW",
+        "detail": "Primary reference: MBP component of the outward-facing maltose-transporter complex with ADP–AlF₄.",
+        "url": "https://www.rcsb.org/structure/3PUW",
+        "pdb_ids": [
+          "3PUW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1FQC",
+        "detail": "Primary reference: closed-form MBP bound to maltotriitol.",
+        "url": "https://www.rcsb.org/structure/1FQC",
+        "pdb_ids": [
+          "1FQC"
+        ]
+      }
+    ]
+  },
+  "bsppase": {
+    "overview": "Bacillus subtilis inorganic pyrophosphatase breaks down pyrophosphate (PPi), a product of many biosynthetic reactions, into two phosphate ions. Its catalytic cleft sits between two domains linked by a flexible hinge.",
+    "overview_refs": [
+      1,
+      6
+    ],
+    "steps": [
+      {
+        "title": "Open the cleft",
+        "text": "Relative domain motion changes access to the active site, allowing substrate to enter.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Organize the active site",
+        "text": "Substrate binding and metal coordination help position the phosphate groups and catalytic water.",
+        "refs": [
+          2
+        ]
+      },
+      {
+        "title": "Hydrolyze PPi",
+        "text": "Metal-assisted hydrolysis converts pyrophosphate into two inorganic phosphate ions.",
+        "refs": [
+          2
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "The primary reference pair is 1K23 and 1WPM. Compare the blue and purple domain arrangements with their gray experimental references. The two-reference RMSD plot separates reference-like states, and the lower profile locates residues with different Cα displacements.",
+        "refs": [
+          3,
+          5
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The opening cartoon explains PPi hydrolysis. Domain motion is illustrated using 1K23 and the metal-free 1WPM reference. The aligned PNP analogue and Mg²⁺ positions are supplied separately by 2HAW; 1K23 itself contains Mn²⁺ sites.",
+        "refs": [
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "interpretation": "The video illustrates domain accessibility and catalytic geometry. The reaction cartoon is a schematic, and the aligned substrate analogue does not represent a simulated chemical reaction.",
+    "references": [
+      {
+        "label": "Ahn et al. (2001). Open and closed type-C pyrophosphatase structures.",
+        "detail": "Primary publication for 1K23. J. Mol. Biol. 313, 797–811. DOI: 10.1006/jmbi.2001.5070",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11697905/",
+        "pdb_ids": [
+          "1K23"
+        ]
+      },
+      {
+        "label": "Fabrichniy et al. (2007). Metal sites and substrate distortion in family II pyrophosphatase.",
+        "detail": "Primary publication for 2HAW. J. Biol. Chem. 282, 1422–1431. DOI: 10.1074/jbc.M513161200",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17095506/",
+        "pdb_ids": [
+          "2HAW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1WPM",
+        "detail": "Primary conformational reference: metal-free Bacillus subtilis family II inorganic pyrophosphatase.",
+        "url": "https://www.rcsb.org/structure/1WPM",
+        "pdb_ids": [
+          "1WPM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 2HAW",
+        "detail": "Supplementary PNP (2PN) substrate-analogue complex with Mg²⁺ positions.",
+        "url": "https://www.rcsb.org/structure/2HAW",
+        "pdb_ids": [
+          "2HAW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1K23",
+        "detail": "Primary conformational reference: Bacillus subtilis family II pyrophosphatase with an open cleft and Mn²⁺ sites.",
+        "url": "https://www.rcsb.org/structure/1K23",
+        "pdb_ids": [
+          "1K23"
+        ]
+      },
+      {
+        "label": "Fabrichniy et al. (2004). Structural studies of metal ions in family II pyrophosphatases.",
+        "detail": "Primary publication for 1WPM. Biochemistry 43, 14403–14411. DOI: 10.1021/bi0484973",
+        "url": "https://doi.org/10.1021/bi0484973",
+        "pdb_ids": [
+          "1WPM"
+        ]
+      }
+    ]
+  },
+  "bbfpn": {
+    "overview": "BbFpn is a bacterial ferroportin homologue from Bdellovibrio bacteriovorus. It transports divalent transition-metal ions through a central cavity between two membrane-spanning lobes.",
+    "overview_refs": [
+      1,
+      4
+    ],
+    "steps": [
+      {
+        "title": "Receive a metal ion",
+        "text": "An inward-facing cavity exposes the binding region to the intracellular side.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Switch accessibility",
+        "text": "Rearrangement of the lobes and local helices changes which side of the membrane can reach the central cavity.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Expose the outer route",
+        "text": "An outward-facing conformation provides access from the extracellular side, illustrating the alternating-access principle.",
+        "refs": [
+          1,
+          4
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "The reference-state comparison uses 5AYM and 6BTX. The RMSD clusters distinguish alternative conformations; the local segment views and Cα profile show where the two states differ.",
+        "refs": [
+          2,
+          3
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The outward-like comparison uses 5AYM; the retained inward-facing protein overlay uses 6BTX. The 6BTX entry also supplies Ca²⁺ and Ni–EDTA context, although the separate complex scene is omitted from the current video.",
+        "refs": [
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "interpretation": "The ion route is a geometric illustration through different access states. It does not measure ion flux or provide a timed transport trajectory.",
+    "references": [
+      {
+        "label": "Taniguchi et al. (2015). Inward- and outward-facing structures of a bacterial ferroportin homologue.",
+        "detail": "Primary publication for 5AYM. Nat. Commun. 6, 8545. DOI: 10.1038/ncomms9545",
+        "url": "https://www.nature.com/articles/ncomms9545",
+        "pdb_ids": [
+          "5AYM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 5AYM",
+        "detail": "Primary outward-facing reference: bacterial ferroportin homologue with soaked iron.",
+        "url": "https://www.rcsb.org/structure/5AYM",
+        "pdb_ids": [
+          "5AYM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 6BTX",
+        "detail": "Primary inward-facing protein reference, also containing Ca²⁺ and Ni–EDTA.",
+        "url": "https://www.rcsb.org/structure/6BTX",
+        "pdb_ids": [
+          "6BTX"
+        ]
+      },
+      {
+        "label": "Deshpande et al. (2018). Calcium as a cofactor for ferroportin-family metal efflux.",
+        "detail": "Primary publication for 6BTX. Nat. Commun. 9, 3075. DOI: 10.1038/s41467-018-05446-4",
+        "url": "https://doi.org/10.1038/s41467-018-05446-4",
+        "pdb_ids": [
+          "6BTX"
+        ]
+      }
+    ]
+  },
+  "pb2-4ncm": {
+    "overview": "The influenza A PB2 cap-binding domain recognizes capped RNA and is a target for small-molecule inhibitors. This case focuses on the inhibitor-bound domain in 4NCM and the configurations of its binding pocket.",
+    "overview_refs": [
+      1,
+      2
+    ],
+    "steps": [
+      {
+        "title": "Recognize the cap",
+        "text": "The PB2 cap-binding pocket participates in recognition of capped RNA.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Occupy the pocket",
+        "text": "The small molecule in 4NCM occupies the cap-binding pocket, illustrating how an inhibitor can interfere with cap recognition.",
+        "refs": [
+          1,
+          2
+        ]
+      },
+      {
+        "title": "Compare pocket configurations",
+        "text": "This work compares MD and OriDynamic ensembles around the bound ligand to show variation in pocket shape and local contacts.",
+        "refs": [
+          3
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "This protein–ligand case uses 4NCM. The MD–OriDynamic comparison, pocket-atom RMSF and PCA plots are results of this work. RMSF summarizes pocket-atom fluctuations, and both ensembles are projected onto the same MD-derived PCA axes. The 4NCM structural reference supports the inhibitor-bound domain, rather than these ensemble comparisons.",
+        "refs": [
+          2,
+          3
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The cartoon introduces PB2, PA and PB1. The structural close-up then shows ligand occupancy and nearby aromatic and polar sites within the cap-binding pocket."
+      }
+    ],
+    "interpretation": "The displayed predictions are interpolated for viewing. Green proximity lines mark distances below 4 Å; a short distance alone does not establish a chemical bond.",
+    "references": [
+      {
+        "label": "Clark et al. (2014). Discovery of azaindole inhibitors targeting influenza PB2.",
+        "detail": "Primary publication for 4NCM. J. Med. Chem. 57, 6668–6678. DOI: 10.1021/jm5007275",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25019388/",
+        "pdb_ids": [
+          "4NCM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 4NCM",
+        "detail": "Primary structure for this protein–ligand case: inhibitor-bound influenza A PB2 cap-binding domain.",
+        "url": "https://www.rcsb.org/structure/4NCM",
+        "pdb_ids": [
+          "4NCM"
+        ]
+      },
+      {
+        "kind": "current-work",
+        "label": "Yang et al. (2026). OriDynamic (this work).",
+        "detail": "Toward a World Model for Biomolecular Dynamics through Latent Ensemble Decomposition with OriDynamic. Unpublished manuscript. Source of the PB2/4NCM MD–OriDynamic pocket-ensemble comparison, RMSF and PCA results displayed in this case. These comparisons are not results from the 4NCM crystallographic paper.",
+        "url": "#citation"
+      }
+    ]
+  },
+  "fak-dd39": {
+    "overview": "Focal adhesion kinase is a protein kinase targeted by small-molecule inhibitors. The MD and OriDynamic ensembles illustrate ligand positions and contact patterns around its catalytic pocket.",
+    "overview_refs": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "steps": [
+      {
+        "title": "Occupy the kinase pocket",
+        "text": "Small molecules bind within the catalytic cleft and form contacts with the kinase domain.",
+        "refs": [
+          1,
+          2
+        ]
+      },
+      {
+        "title": "Reorganize contacts",
+        "text": "The displayed configurations span pocket-associated and more displaced ligand positions, with corresponding differences in protein–ligand contacts.",
+        "refs": [
+          4
+        ]
+      },
+      {
+        "title": "Release the ligand",
+        "text": "The MD reference shows a ligand leaving the pocket. The cartoon illustrates the resulting free binding site and possible access by ATP.",
+        "refs": [
+          3,
+          4
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "Compare the MD and OriDynamic ligand ensembles, the spatial distributions and selected residue contacts. S0–S3 close-ups highlight representative configurations from the FAK/DD39 analysis (Figure 6h).",
+        "refs": [
+          3,
+          4
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The blue/gold predicted configurations are ordered by ligand displacement for display. The pink departure sequence is a chronological MD reference from one replica.",
+        "refs": [
+          4
+        ]
+      }
+    ],
+    "interpretation": "This comparison describes configurations and contacts. It does not establish a dissociation rate, residence time, or restoration of FAK activity after ligand release.",
+    "references": [
+      {
+        "label": "Heinrich et al. (2013). Fragment-based discovery of substituted heterocyclic FAK inhibitors.",
+        "detail": "Primary publication for the 4GU6 FAK crystal complex with ligand 10N. J. Med. Chem. 56, 1160–1170. DOI: 10.1021/jm3016014",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23294348/",
+        "pdb_ids": [
+          "4GU6"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 4GU6",
+        "detail": "Receptor reference: human FAK catalytic domain, crystallized with ligand 10N. The displayed DD-13M case pairs this receptor with docked ligand 39.",
+        "url": "https://www.rcsb.org/structure/4GU6",
+        "pdb_ids": [
+          "4GU6"
+        ]
+      },
+      {
+        "kind": "dataset",
+        "label": "Li et al. DD-13M dataset.",
+        "detail": "A Novel 4-D Dataset Paradigm for Studying Complete Ligand-Protein Dissociation Dynamics. arXiv:2504.18367v2 (2026). Dataset source for the ligand-39 MD reference.",
+        "url": "https://arxiv.org/abs/2504.18367v2"
+      },
+      {
+        "kind": "current-work",
+        "label": "Yang et al. (2026). OriDynamic (this work).",
+        "detail": "Toward a World Model for Biomolecular Dynamics through Latent Ensemble Decomposition with OriDynamic. Unpublished manuscript. Figure 6h: the FAK/DD39 MD–OriDynamic comparison, ligand distribution, contacts and representative configurations.",
+        "url": "#citation"
+      }
+    ]
+  }
+}

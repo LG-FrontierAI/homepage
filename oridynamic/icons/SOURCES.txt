@@ -1,0 +1,10 @@
+Button icons from Font Awesome Free. Original paths and attribution comments retained; SVG fill, accessibility attributes and display size are set by build.py/CSS.
+
+PDF: Font Awesome Free 5.15.4
+https://github.com/FortAwesome/Font-Awesome/blob/5.15.4/svgs/solid/file-pdf.svg
+
+GitHub: Font Awesome Free 6.7.2
+https://github.com/FortAwesome/Font-Awesome/blob/6.7.2/svgs/brands/github.svg
+
+SVG icons: CC BY 4.0, https://fontawesome.com/license/free
+GitHub logo represents GitHub; it remains a trademark of its owner.

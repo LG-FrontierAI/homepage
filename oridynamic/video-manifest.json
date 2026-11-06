@@ -1,0 +1,30 @@
+{
+  "source": "OriDynamic_homepage.mp4",
+  "source_sha256": "374530239abddc65623608e35ec7593d1eb27e9b9708d093920281946ac6df2f",
+  "asset": "assets/oridynamic-homepage.mp4",
+  "duration_seconds": 30,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "frame_rate": 30,
+  "audio": "Original audio track retained; byte-identical copy, no transcoding",
+  "poster": {
+    "asset": "assets/homepage-video-poster.jpg",
+    "time_seconds": 29.5
+  },
+  "music": {
+    "title": "Discovery",
+    "artist": "Scott Buckley",
+    "source": "https://www.scottbuckley.com.au/library/discovery/",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "modifications": "Music excerpt synchronized to this video.",
+    "credit_location": "Visible caption directly below the main video, page footer, and video-music-credits.txt",
+    "artist_url": "https://www.scottbuckley.com.au/",
+    "verified_on": "2026-11-05",
+    "usage_instructions": "https://www.scottbuckley.com.au/library/using-this-music/"
+  },
+  "title": "OriDynamic — Toward biological intelligence",
+  "audio_tracks": 1
+}
