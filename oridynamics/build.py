@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate the English, paper-style OriDynamics homepage. Standard library only."""
 import json
+import base64
 import os
 import textwrap
 from hashlib import sha256
@@ -47,6 +48,20 @@ def icon(name):
 
 FIGURES = json.loads((ROOT / 'figure-manifest.json').read_text())
 DIMENSIONS = {item['file']: tuple(item['dimensions']) for item in FIGURES['assets']}
+
+# Replace only the presentation label; all scientific plot pixels stay intact.
+if 'performance_axis_label' in FIGURES:
+    label = FIGURES['performance_axis_label']
+    source_width, source_height = DIMENSIONS[label['source']]
+    source_data = base64.b64encode((OUT / 'assets' / label['source']).read_bytes()).decode('ascii')
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{source_width}" height="{source_height}" viewBox="0 0 {source_width} {source_height}">
+<title>OriDynamics overall performance — Z-score</title>
+<image width="{source_width}" height="{source_height}" href="data:image/png;base64,{source_data}"/>
+<rect x="25" y="310" width="65" height="290" fill="white"/>
+<text x="60" y="453" transform="rotate(-90 60 453)" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="#4c3f6d">{escape(label['text'])}</text>
+</svg>'''
+    (OUT / 'assets' / label['output']).write_text(svg)
+    DIMENSIONS[label['output']] = (source_width, source_height)
 
 def figure(file, title, caption, eager=False, caption_heading=True):
     width,height=DIMENSIONS[file]

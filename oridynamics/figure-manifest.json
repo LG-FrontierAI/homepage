@@ -1,7 +1,7 @@
 {
   "homepage_figures": {
     "overview": "overview-20261108.png",
-    "performance": "performance-20261108.png"
+    "performance": "performance-zscore-20261108.svg"
   },
   "assets": [
     {
@@ -80,5 +80,11 @@
       "sha256": "1cdacb046114e33636c68b54fe9706887bcef7eb16cfc6e4476960e60e76dc47",
       "note": "Latest user-supplied performance figure copied byte-for-byte, including its labels and OriDynamics branding."
     }
-  ]
+  ],
+  "performance_axis_label": {
+    "source": "performance-20261108.png",
+    "output": "performance-zscore-20261108.svg",
+    "text": "Z-score",
+    "note": "2026-11-08: user-requested axis-label correction. Only the label is replaced; values, ticks and plot marks are unchanged."
+  }
 }
