@@ -12,7 +12,7 @@ from urllib.parse import unquote, urljoin, urlsplit
 ROOT = Path(__file__).resolve().parent
 OUTPUT = ROOT / '_site'
 BASE_URL = os.environ.get('PAGES_BASE_URL', 'https://lg-frontierai.github.io/homepage').rstrip('/') + '/'
-PROJECTS = ('oridynamic',)
+PROJECTS = ('oridynamics',)
 
 
 class References(HTMLParser):
@@ -73,6 +73,14 @@ def main():
     OUTPUT.mkdir()
     shutil.copy2(ROOT / 'index.html', OUTPUT / 'index.html')
     (OUTPUT / '.nojekyll').touch()
+    # Keep old bookmarks working without publishing the retired project assets.
+    legacy = OUTPUT / 'oridynamic'
+    legacy.mkdir()
+    (legacy / 'index.html').write_text("""<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OriDynamics</title><meta http-equiv="refresh" content="0;url=../oridynamics/">
+<script>location.replace('../oridynamics/' + location.search + location.hash);</script>
+</head><body><a href="../oridynamics/">Continue to OriDynamics</a></body></html>""")
     for project in PROJECTS:
         source = ROOT / project
         site_url = urljoin(BASE_URL, project + '/')

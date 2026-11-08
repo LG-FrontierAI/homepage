@@ -1,0 +1,269 @@
+{
+  "bbfpn": {
+    "overview": "BbFpn is a bacterial ferroportin homologue from Bdellovibrio bacteriovorus. It transports divalent transition-metal ions through a central cavity between two membrane-spanning lobes.",
+    "overview_refs": [
+      1,
+      4
+    ],
+    "steps": [
+      {
+        "title": "Receive a metal ion",
+        "text": "An inward-facing cavity exposes the binding region to the intracellular side.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Switch accessibility",
+        "text": "Rearrangement of the lobes and local helices changes which side of the membrane can reach the central cavity.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Expose the outer route",
+        "text": "An outward-facing conformation provides access from the extracellular side, illustrating the alternating-access principle.",
+        "refs": [
+          1,
+          4
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "The reference-state comparison uses 5AYM and 6BTX. The RMSD clusters distinguish alternative conformations; the local segment views and Cα profile show where the two states differ.",
+        "refs": [
+          2,
+          3
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The outward-like comparison uses 5AYM; the retained inward-facing protein overlay uses 6BTX. The 6BTX entry also supplies Ca²⁺ and Ni–EDTA context, although the separate complex scene is omitted from the current video.",
+        "refs": [
+          2,
+          3,
+          4
+        ]
+      }
+    ],
+    "interpretation": "The ion route is a geometric illustration through different access states. It does not measure ion flux or provide a timed transport trajectory.",
+    "references": [
+      {
+        "label": "Taniguchi et al. (2015). Inward- and outward-facing structures of a bacterial ferroportin homologue.",
+        "detail": "Primary publication for 5AYM. Nat. Commun. 6, 8545. DOI: 10.1038/ncomms9545",
+        "url": "https://www.nature.com/articles/ncomms9545",
+        "pdb_ids": [
+          "5AYM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 5AYM",
+        "detail": "Primary outward-facing reference: bacterial ferroportin homologue with soaked iron.",
+        "url": "https://www.rcsb.org/structure/5AYM",
+        "pdb_ids": [
+          "5AYM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 6BTX",
+        "detail": "Primary inward-facing protein reference, also containing Ca²⁺ and Ni–EDTA.",
+        "url": "https://www.rcsb.org/structure/6BTX",
+        "pdb_ids": [
+          "6BTX"
+        ]
+      },
+      {
+        "label": "Deshpande et al. (2018). Calcium as a cofactor for ferroportin-family metal efflux.",
+        "detail": "Primary publication for 6BTX. Nat. Commun. 9, 3075. DOI: 10.1038/s41467-018-05446-4",
+        "url": "https://doi.org/10.1038/s41467-018-05446-4",
+        "pdb_ids": [
+          "6BTX"
+        ]
+      }
+    ]
+  },
+  "bsppase": {
+    "overview": "Bacillus subtilis inorganic pyrophosphatase breaks down pyrophosphate (PPi), a product of many biosynthetic reactions, into two phosphate ions. Its catalytic cleft sits between two domains linked by a flexible hinge.",
+    "overview_refs": [
+      1,
+      6
+    ],
+    "steps": [
+      {
+        "title": "Open the cleft",
+        "text": "Relative domain motion changes access to the active site, allowing substrate to enter.",
+        "refs": [
+          1
+        ]
+      },
+      {
+        "title": "Organize the active site",
+        "text": "Substrate binding and metal coordination help position the phosphate groups and catalytic water.",
+        "refs": [
+          2
+        ]
+      },
+      {
+        "title": "Hydrolyze PPi",
+        "text": "Metal-assisted hydrolysis converts pyrophosphate into two inorganic phosphate ions.",
+        "refs": [
+          2
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "The primary reference pair is 1K23 and 1WPM. Compare the blue and purple domain arrangements with their gray experimental references. The two-reference RMSD plot separates reference-like states, and the lower profile locates residues with different Cα displacements.",
+        "refs": [
+          3,
+          5
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The opening cartoon explains PPi hydrolysis. Domain motion is illustrated using 1K23 and the metal-free 1WPM reference. The aligned PNP analogue and Mg²⁺ positions are supplied separately by 2HAW; 1K23 itself contains Mn²⁺ sites.",
+        "refs": [
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "interpretation": "The video illustrates domain accessibility and catalytic geometry. The reaction cartoon is a schematic, and the aligned substrate analogue does not represent a simulated chemical reaction.",
+    "references": [
+      {
+        "label": "Ahn et al. (2001). Open and closed type-C pyrophosphatase structures.",
+        "detail": "Primary publication for 1K23. J. Mol. Biol. 313, 797–811. DOI: 10.1006/jmbi.2001.5070",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11697905/",
+        "pdb_ids": [
+          "1K23"
+        ]
+      },
+      {
+        "label": "Fabrichniy et al. (2007). Metal sites and substrate distortion in family II pyrophosphatase.",
+        "detail": "Primary publication for 2HAW. J. Biol. Chem. 282, 1422–1431. DOI: 10.1074/jbc.M513161200",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/17095506/",
+        "pdb_ids": [
+          "2HAW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1WPM",
+        "detail": "Primary conformational reference: metal-free Bacillus subtilis family II inorganic pyrophosphatase.",
+        "url": "https://www.rcsb.org/structure/1WPM",
+        "pdb_ids": [
+          "1WPM"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 2HAW",
+        "detail": "Supplementary PNP (2PN) substrate-analogue complex with Mg²⁺ positions.",
+        "url": "https://www.rcsb.org/structure/2HAW",
+        "pdb_ids": [
+          "2HAW"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 1K23",
+        "detail": "Primary conformational reference: Bacillus subtilis family II pyrophosphatase with an open cleft and Mn²⁺ sites.",
+        "url": "https://www.rcsb.org/structure/1K23",
+        "pdb_ids": [
+          "1K23"
+        ]
+      },
+      {
+        "label": "Fabrichniy et al. (2004). Structural studies of metal ions in family II pyrophosphatases.",
+        "detail": "Primary publication for 1WPM. Biochemistry 43, 14403–14411. DOI: 10.1021/bi0484973",
+        "url": "https://doi.org/10.1021/bi0484973",
+        "pdb_ids": [
+          "1WPM"
+        ]
+      }
+    ]
+  },
+  "fak-dd39": {
+    "overview": "Focal adhesion kinase is a protein kinase targeted by small-molecule inhibitors. The MD and OriDynamics ensembles illustrate ligand positions and contact patterns around its catalytic pocket.",
+    "overview_refs": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "steps": [
+      {
+        "title": "Occupy the kinase pocket",
+        "text": "Small molecules bind within the catalytic cleft and form contacts with the kinase domain.",
+        "refs": [
+          1,
+          2
+        ]
+      },
+      {
+        "title": "Reorganize contacts",
+        "text": "The displayed configurations span pocket-associated and more displaced ligand positions, with corresponding differences in protein–ligand contacts.",
+        "refs": [
+          4
+        ]
+      },
+      {
+        "title": "Release the ligand",
+        "text": "The MD reference shows a ligand leaving the pocket. The cartoon illustrates the resulting free binding site and possible access by ATP.",
+        "refs": [
+          3,
+          4
+        ]
+      }
+    ],
+    "reading": [
+      {
+        "title": "Scientific figure",
+        "text": "Compare the MD and OriDynamics ligand ensembles, the spatial distributions and selected residue contacts. S0–S3 close-ups highlight representative configurations from the FAK/DD39 analysis (Figure 6h).",
+        "refs": [
+          3,
+          4
+        ]
+      },
+      {
+        "title": "Animation",
+        "text": "The blue/gold predicted configurations are ordered by ligand displacement for display. The pink departure sequence is a chronological MD reference from one replica.",
+        "refs": [
+          4
+        ]
+      }
+    ],
+    "interpretation": "This comparison describes configurations and contacts. It does not establish a dissociation rate, residence time, or restoration of FAK activity after ligand release.",
+    "references": [
+      {
+        "label": "Heinrich et al. (2013). Fragment-based discovery of substituted heterocyclic FAK inhibitors.",
+        "detail": "Primary publication for the 4GU6 FAK crystal complex with ligand 10N. J. Med. Chem. 56, 1160–1170. DOI: 10.1021/jm3016014",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23294348/",
+        "pdb_ids": [
+          "4GU6"
+        ]
+      },
+      {
+        "label": "RCSB PDB · 4GU6",
+        "detail": "Receptor reference: human FAK catalytic domain, crystallized with ligand 10N. The displayed DD-13M case pairs this receptor with docked ligand 39.",
+        "url": "https://www.rcsb.org/structure/4GU6",
+        "pdb_ids": [
+          "4GU6"
+        ]
+      },
+      {
+        "kind": "dataset",
+        "label": "Li et al. DD-13M dataset.",
+        "detail": "A Novel 4-D Dataset Paradigm for Studying Complete Ligand-Protein Dissociation Dynamics. arXiv:2504.18367v2 (2026). Dataset source for the ligand-39 MD reference.",
+        "url": "https://arxiv.org/abs/2504.18367v2"
+      },
+      {
+        "kind": "current-work",
+        "label": "Yang et al. (2026). OriDynamics (this work).",
+        "detail": "Toward a World Model for Biomolecular Dynamics through Latent Ensemble Decomposition with OriDynamics. Unpublished manuscript. Figure 6h: the FAK/DD39 MD–OriDynamics comparison, ligand distribution, contacts and representative configurations.",
+        "url": "#citation"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "homepage_figures": {
+    "overview": "overview-20261108.png",
+    "performance": "performance-20261108.png"
+  },
+  "assets": [
+    {
+      "file": "applications.webp",
+      "physical_page": 10,
+      "panels": "Figure 5a-h",
+      "dimensions": [
+        2600,
+        3260
+      ],
+      "parts": [
+        {
+          "preview_crop_xyxy": [
+            140,
+            145,
+            1275,
+            1569
+          ],
+          "source_crop_xyxy": [
+            360,
+            373,
+            3279,
+            4033
+          ],
+          "canvas_offset": [
+            0,
+            0
+          ],
+          "pdf_points_xyxy": [
+            59.528,
+            61.622,
+            542.126,
+            666.797
+          ]
+        }
+      ],
+      "bytes": 740272,
+      "sha256": "46ae07fb2d4b04be274f31c37caefdfa76955a01eb7f1b5637814a6f6d595656"
+    },
+    {
+      "file": "fak-dd39-comparison.svg",
+      "dimensions": [
+        1200,
+        900
+      ],
+      "bytes": 791867,
+      "sha256": "620acdae158710ea8456b55c5c0b390a1196fed6244c25c4a28bec23d8734eba",
+      "source_pdf": "OriDynamic_20261101_2159.pdf",
+      "physical_page": 12,
+      "panels": "Figure 6h",
+      "note": "Intact scientific panels uniformly scaled and repositioned; user-marked annotations and the bottom MD / OriDynamic close-up legend excluded. No data is redrawn."
+    },
+    {
+      "file": "overview-20261108.png",
+      "source": "overview_20261108_1711.pdf",
+      "source_sha256": "ab7d459e81bd0b81c40b815500785227b8f179d9a130d78f109dc404a9b170c3",
+      "dimensions": [
+        3200,
+        2555
+      ],
+      "bytes": 1951345,
+      "sha256": "affdb59b4fbd9e7dd06deb587bd33bf9cee34b969e204dfab918e04e22cb71fc",
+      "note": "Full supplied PDF page rendered with Poppler at 3200px width; all panels and labels retained.",
+      "physical_page": 1,
+      "renderer": "pdftoppm, PNG, 3200px width"
+    },
+    {
+      "file": "performance-20261108.png",
+      "source": "homopage_oridynamics.png",
+      "source_sha256": "1cdacb046114e33636c68b54fe9706887bcef7eb16cfc6e4476960e60e76dc47",
+      "dimensions": [
+        4489,
+        4678
+      ],
+      "bytes": 3311196,
+      "sha256": "1cdacb046114e33636c68b54fe9706887bcef7eb16cfc6e4476960e60e76dc47",
+      "note": "Latest user-supplied performance figure copied byte-for-byte, including its labels and OriDynamics branding."
+    }
+  ]
+}

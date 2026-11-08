@@ -1,49 +1,42 @@
 # LG-FrontierAI homepage
 
-统一维护 LG-FrontierAI 各项目的主页源码与网页资源。
+统一维护组织各项目的公开主页。当前项目为 **OriDynamics**。
 
-项目入口：<https://lg-frontierai.github.io/homepage/>
+- 项目主页：https://lg-frontierai.github.io/homepage/oridynamics/
+- 项目入口：https://lg-frontierai.github.io/homepage/
+- 研究代码：https://github.com/LG-FrontierAI/oridynamics
 
-| 项目目录 | 独立项目页面 | 原官网 |
-| --- | --- | --- |
-| [oridynamic](oridynamic/) | [OriDynamic](https://lg-frontierai.github.io/homepage/oridynamic/) | [oridynamics.github.io](https://oridynamics.github.io/) |
+## 目录
 
-各项目使用独立子目录。OriDynamic 的研究代码由组织内的 `OriDynamic` 仓库维护。
+```text
+homepage/
+├── oridynamics/                 # OriDynamics 文案、构建代码、样式及媒体
+├── index.html                   # 组织项目入口
+├── build_pages.py               # 构建并检查全部网页资源
+└── .github/workflows/pages.yml  # main 推送后自动发布 GitHub Pages
+```
 
-## 自动发布
+2026-11-08 根据最新本地版本重建：OriDynamics 品牌、新摘要、新主视频与封面；Applications 依次为 BbFpn、BsPPase、FAK。旧 `oridynamic/` 项目内容已移除，历史提交可供回退；旧网站地址自动跳转至 `oridynamics/`。
 
-GitHub Pages 使用本仓库的 GitHub Actions 工作流 `.github/workflows/pages.yml`。
+## 构建和发布
 
-更新 `main` 分支上的 OriDynamic 文件、入口页面或部署脚本后，工作流会自动构建和校验资源，将 `_site/` 部署到组织网址。也可以在 Actions 中手动运行 **Deploy project homepages**。
-
-原官网仍由 `oridynamics/oridynamics.github.io` 仓库独立发布；本工作流只更新组织网址。
-
-首次导入对应原官网提交 `5e98e84a3dfa700671224eb8268491d68e2f8dd5`，目前已适配组织网站的子目录地址。
-
-## 本地构建与预览
-
-需要 Python 3.10 或更高版本，仅使用标准库。
+仅需 Python 3.10+ 标准库，无需原始 PDF 或视频编辑软件。
 
 ```sh
 python3 build_pages.py
-python3 oridynamic/preview_server.py --directory _site --port 4188
+python3 oridynamics/preview_server.py --directory _site --port 4188
 ```
 
-打开 <http://localhost:4188/oridynamic/>。生成的 `_site/` 仅用于部署，不需要提交。
+预览：http://localhost:4188/oridynamics/ 。`_site/` 为忽略的生成目录，不提交。
 
-单独预览 OriDynamic：
+更新 `oridynamics/` 后提交并推送 `main`，GitHub Actions 自动构建、校验资源并发布。也可手动执行 **Deploy project homepages** 工作流。网页公开访问无需 GitHub 登录。
 
-```sh
-python3 oridynamic/build.py
-python3 oridynamic/preview_server.py --port 4187
-```
+维护细节见 [oridynamics/README.md](oridynamics/README.md)。原 https://oridynamics.github.io/ 使用另一个仓库独立发布，本仓库不会自动更新该网址。
 
-维护说明见 [oridynamic/README.md](oridynamic/README.md)。
+## 新增项目
 
-## 增加项目
+将新项目放入独立子目录，在 `build_pages.py` 的 `PROJECTS` 中登记，并更新入口链接及工作流路径。项目的 `build.py` 应读取 `SITE_URL` 并生成 `dist/`。
 
-新项目使用独立目录，在 `build_pages.py` 的 `PROJECTS` 中登记，并添加入口页面链接及工作流路径触发条件。每个项目的 `build.py` 应读取 `SITE_URL` 并生成 `dist/`。
+## 资源许可
 
-## 第三方资源
-
-图标来源及许可证见 `oridynamic/icons/`。主视频中的音乐署名与许可链接见 `oridynamic/video-music-credits.txt`；这些署名也保留在网页中。
+保留页面配乐署名及 `oridynamics/video-music-credits.txt`。图标来源和许可证位于 `oridynamics/icons/`；本次重建未为项目内容新增许可证。

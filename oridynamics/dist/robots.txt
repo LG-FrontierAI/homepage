@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lg-frontierai.github.io/homepage/oridynamics/sitemap.xml

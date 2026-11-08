@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'oridynamic/**'
+      - 'oridynamics/**'
       - 'index.html'
       - 'build_pages.py'
       - '.github/workflows/pages.yml'

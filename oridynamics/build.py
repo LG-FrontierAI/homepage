@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
-"""Generate the English, paper-style OriDynamic homepage. Standard library only."""
+"""Generate the English, paper-style OriDynamics homepage. Standard library only."""
 import json
-import base64
 import os
 import textwrap
 from hashlib import sha256
@@ -9,7 +8,7 @@ from pathlib import Path
 from html import escape
 
 ROOT = Path(__file__).resolve().parent
-SITE_URL = os.environ.get('SITE_URL', 'https://lg-frontierai.github.io/homepage/oridynamic/').rstrip('/') + '/'
+SITE_URL = os.environ.get('SITE_URL', 'https://lg-frontierai.github.io/homepage/oridynamics/').rstrip('/') + '/'
 DATA = json.loads((ROOT / 'content.json').read_text())
 SITE_GROUP = 'LGLab Frontier AI Group'
 OUT = ROOT / 'dist'
@@ -51,10 +50,11 @@ DIMENSIONS = {item['file']: tuple(item['dimensions']) for item in FIGURES['asset
 
 def figure(file, title, caption, eager=False, caption_heading=True):
     width,height=DIMENSIONS[file]
+    image_url=versioned_asset(f'assets/{file}')
     heading=f'<strong>{escape(title)}.</strong> ' if caption_heading else ''
     return f'''<figure class="research-figure">
-      <button class="figure-button" type="button" data-figure="assets/{file}" data-title="{escape(title,quote=True)}" aria-label="Enlarge {escape(title,quote=True)}">
-        <img src="assets/{file}" width="{width}" height="{height}" alt="{escape(caption,quote=True)}" loading="{'eager' if eager else 'lazy'}" decoding="async" {'fetchpriority="high"' if eager else ''}>
+      <button class="figure-button" type="button" data-figure="{image_url}" data-title="{escape(title,quote=True)}" aria-label="Enlarge {escape(title,quote=True)}">
+        <img src="{image_url}" width="{width}" height="{height}" alt="{escape(caption,quote=True)}" loading="{'eager' if eager else 'lazy'}" decoding="async" {'fetchpriority="high"' if eager else ''}>
         <span class="enlarge">{icon('expand')} View full size</span>
       </button>
       <figcaption>{heading}{caption}</figcaption>
@@ -82,28 +82,17 @@ author_note=' &nbsp; · &nbsp; '.join(author_notes)
 affiliations=''.join(f'<span><sup>{n}</sup>{v}</span>' for n,v in DATA['affiliations'].items())
 highlights=''.join(f'<li><strong>{escape(h["en_title"])}</strong><p>{escape(h["en"])}</p></li>' for h in DATA['highlights'])
 
-overview=figure('overview.webp','OriDynamic overview',
-    'OriDynamic generates all-atom conformational ensembles across protein monomers, protein–ligand complexes and protein–protein assemblies within a unified framework.',caption_heading=False)
+overview=figure(FIGURES['homepage_figures']['overview'],'OriDynamics overview',
+    'OriDynamics generates all-atom conformational ensembles across protein monomers, protein–ligand complexes and protein–protein assemblies within a unified framework.',caption_heading=False)
 
-# Preserve the supplied plot pixels; only replace its axis label in an SVG layer.
-performance_source = 'OriDynamic_Performance_Composite_v6A_ZscorePlus2.png'
-performance_file = 'performance-zscore.svg'
-performance_width, performance_height = DIMENSIONS[performance_source]
-performance_data = base64.b64encode((OUT / 'assets' / performance_source).read_bytes()).decode('ascii')
-(OUT / 'assets' / performance_file).write_text(f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{performance_width}" height="{performance_height}" viewBox="0 0 {performance_width} {performance_height}">
-<title>OriDynamic performance: Z-score</title>
-<image width="{performance_width}" height="{performance_height}" xlink:href="data:image/png;base64,{performance_data}"/>
-<rect x="25" y="310" width="65" height="290" fill="white"/>
-<text x="60" y="453" transform="rotate(-90 60 453)" text-anchor="middle" dominant-baseline="central" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="#4c3f6d">Z-score</text>
-</svg>''')
-DIMENSIONS[performance_file] = DIMENSIONS[performance_source]
-benchmark_html = figure(performance_file, 'OriDynamic overall performance',
-    'OriDynamic captures conformational dynamics across monomers, protein–ligand complexes, and protein–protein assemblies. It achieves leading overall performance among evaluated methods while reproducing key patterns of flexibility and interaction-site dynamics observed in molecular dynamics simulations.', caption_heading=False)
+# Display the latest supplied figures in full, with the same assets used for zoom.
+benchmark_html = figure(FIGURES['homepage_figures']['performance'], 'OriDynamics overall performance',
+    'OriDynamics captures conformational dynamics across monomers, protein–ligand complexes, and protein–protein assemblies. It achieves leading overall performance among evaluated methods while reproducing key patterns of flexibility and interaction-site dynamics observed in molecular dynamics simulations.', caption_heading=False)
 
 APPLICATION_CASES = json.loads((ROOT / 'application-cases.json').read_text())
 CASE_EXPLANATIONS = json.loads((ROOT / 'case-explanations.json').read_text())
 CASE_STRUCTURES = json.loads((ROOT / 'case-structure-map.json').read_text())['cases']
-assert set(CASE_STRUCTURES) == {case['id'] for case in APPLICATION_CASES}
+assert {case['id'] for case in APPLICATION_CASES} <= set(CASE_STRUCTURES)
 
 def case_explanation(item):
     slug = item['id']
@@ -236,7 +225,7 @@ application_html=f'''<article class="result-block application-group">
   <h3>Alternative states and partner-dependent responses</h3>
   <figure class="research-figure application-summary">
     {application_crop('Alternative-state recovery benchmarks, panels a and b',0,0,2600,650)}
-    <figcaption>OriDynamic recovers alternative experimental conformations and structural responses to ligand or protein partners across ConforMix and ProMiSE.</figcaption>
+    <figcaption>OriDynamics recovers alternative experimental conformations and structural responses to ligand or protein partners across ConforMix and ProMiSE.</figcaption>
   </figure>
   {''.join(application_case(item) for item in APPLICATION_CASES)}
 </article>'''
@@ -246,7 +235,7 @@ bib_names = [author['name'] for author in authors]
 bib_author_lines = [' and '.join(bib_names[i:i + 3]) for i in range(0, len(bib_names), 3)]
 bib_authors = ' and\n            '.join(bib_author_lines)
 bib_title = textwrap.fill(
-    DATA['title'].replace('OriDynamic', '{OriDynamic}'),
+    DATA['title'].replace('OriDynamics', '{OriDynamics}'),
     width=78, initial_indent='  title = {', subsequent_indent='           ',
     break_long_words=False, break_on_hyphens=False,
 ) + '},'
@@ -268,13 +257,13 @@ html=f'''<!doctype html>
 <meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website"><meta property="og:title" content="{escape(DATA['title'],quote=True)}">
 <meta property="og:description" content="{escape(DATA['suggested_hero']['description_en'],quote=True)}">
-<meta property="og:image" content="{escape(SITE_URL + 'assets/social-preview.png', quote=True)}">
+<meta property="og:image" content="{escape(SITE_URL, quote=True)}assets/social-preview.png">
 <meta property="og:url" content="{escape(SITE_URL, quote=True)}">
 <link rel="canonical" href="{escape(SITE_URL, quote=True)}">
 <link rel="icon" href="favicon.ico?v=oridynamic-v6-1" sizes="16x16 24x24 32x32 48x48 64x64 128x128 256x256">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=oridynamic-v6-1">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=oridynamic-v6-1">
-<link rel="icon" type="image/svg+xml" sizes="any" href="assets/favicon-oridynamic-v6.svg?v=oridynamic-v6-1">
+<link rel="icon" type="image/svg+xml" sizes="any" href="{versioned_asset('assets/favicon-oridynamic-v6.svg')}">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png?v=oridynamic-v6-1">
 <link rel="stylesheet" href="site.css?v={CSS_VERSION}"><script src="site.js?v={JS_VERSION}" defer></script>
 </head><body>
@@ -286,14 +275,16 @@ html=f'''<!doctype html>
 <main>
 <div class="intro-screen" id="top">
 <header class="paper-header"><div class="container">
-  <a class="wordmark" href="#top" aria-label="OriDynamic home"><img src="assets/oridynamic-logo.png" alt="OriDynamic" width="1983" height="793" decoding="async"></a>
+  <a class="wordmark" href="#top" aria-label="OriDynamics home"><img src="{versioned_asset('assets/oridynamics-logo.png')}" alt="OriDynamics" width="2037" height="772" decoding="async"></a>
   <h1>{heading_html}</h1>
   <p class="contributors">{contributors}</p>
-  <div class="affiliations">{affiliations}</div>
-  <p class="author-note">{author_note}</p>
+  <div class="affiliation-block">
+    <div class="affiliations">{affiliations}</div>
+    <p class="author-note">{author_note}</p>
+  </div>
   <div class="paper-links">
     <button class="pill" type="button" disabled title="Link will be available later">{icon('paper')}<span>Technical Report</span></button>
-    <a class="pill" href="https://github.com/JiahaoYoung0520/oridynamic_test?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">{icon('code')}<span>Github Code</span></a>
+    <a class="pill" href="https://github.com/LG-FrontierAI/oridynamics" target="_blank" rel="noopener noreferrer">{icon('code')}<span>Github Code</span></a>
   </div>
   <p class="hero-slogan"><span>Understanding biomolecular dynamics</span>
     <span>is a key step toward biological intelligence.</span></p>
@@ -340,8 +331,8 @@ html=f'''<!doctype html>
   <div class="citation-box"><button type="button" id="copy-citation">{icon('copy')} <span>Copy BibTeX</span></button><pre id="citation-text">{escape(bib)}</pre><p id="copy-status" role="status" aria-live="polite"></p></div>
 </div></section>
 </main>
-<footer><div class="reading-width"><a class="footer-top" href="#top">Back to top ↑</a><p>© 2026 {SITE_GROUP} · OriDynamic</p><p>Figures from the manuscript version of 1 November 2026.</p><p class="design-credit">Layout inspired by the <a href="https://odesign1.github.io/" target="_blank" rel="noopener">ODesign project page</a>.</p><p class="media-credit">{music_credit} <a href="video-music-credits.txt" target="_blank" rel="noopener">Music credits</a></p></div></footer>
-<dialog id="figure-dialog" aria-labelledby="dialog-caption"><div class="dialog-toolbar"><h2 id="dialog-caption"></h2><a id="original-figure" href="assets/overview.webp" target="_blank" rel="noopener">Open image ↗</a><button type="button" id="close-dialog" aria-label="Close figure">{icon('close')}</button></div><div class="dialog-image"><div id="dialog-crop"><img id="dialog-img" alt=""></div></div></dialog>
+<footer><div class="reading-width"><a class="footer-top" href="#top">Back to top ↑</a><p>© 2026 {SITE_GROUP} · OriDynamics</p><p>Figures from the manuscript and project materials, updated November 2026.</p><p class="design-credit">Layout inspired by the <a href="https://odesign1.github.io/" target="_blank" rel="noopener">ODesign project page</a>.</p><p class="media-credit">{music_credit} <a href="video-music-credits.txt" target="_blank" rel="noopener">Music credits</a></p></div></footer>
+<dialog id="figure-dialog" aria-labelledby="dialog-caption"><div class="dialog-toolbar"><h2 id="dialog-caption"></h2><a id="original-figure" href="{versioned_asset('assets/' + FIGURES['homepage_figures']['overview'])}" target="_blank" rel="noopener">Open image ↗</a><button type="button" id="close-dialog" aria-label="Close figure">{icon('close')}</button></div><div class="dialog-image"><div id="dialog-crop"><img id="dialog-img" alt=""></div></div></dialog>
 <dialog id="case-notes-dialog" class="case-notes-dialog" aria-labelledby="case-notes-title">
   <div class="case-notes-toolbar">
     <p>Mechanism &amp; references</p>

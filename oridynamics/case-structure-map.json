@@ -1,0 +1,84 @@
+{
+  "verified_on": "2026-11-06",
+  "case_assignment_source": "User-provided PDB mapping, 2026-11-05",
+  "verification": "RCSB PDB entry identities and primary publications; local video production notes and the DD39 ligand element records in the migrated case data.",
+  "cases": {
+    "bbfpn": {
+      "primary": [
+        {
+          "pdb": "5AYM",
+          "description": "Outward-facing bacterial ferroportin homologue with soaked iron.",
+          "refs": [
+            1,
+            2
+          ]
+        },
+        {
+          "pdb": "6BTX",
+          "description": "Ca²⁺-bound BbFpn structure used for the inward-facing reference; the entry also contains a Ni–EDTA complex.",
+          "refs": [
+            3,
+            4
+          ]
+        }
+      ],
+      "supplementary": [
+        {
+          "pdb": "6BTX",
+          "description": "Also supplies the experimental Ca²⁺ and Ni–EDTA context. These components come from the same primary reference, not a third PDB entry.",
+          "refs": [
+            3,
+            4
+          ]
+        }
+      ],
+      "note": "The retained protein overlay uses 6BTX. The current v3 video omits the separate Ca²⁺/Ni–EDTA scene; the structure is still documented here as supplementary context. Ca²⁺ and the Ni–EDTA complex are distinct components."
+    },
+    "bsppase": {
+      "primary": [
+        {
+          "pdb": "1K23",
+          "description": "Bacillus subtilis family II pyrophosphatase with an open catalytic cleft and Mn²⁺ sites.",
+          "refs": [
+            1,
+            5
+          ]
+        },
+        {
+          "pdb": "1WPM",
+          "description": "Metal-free Bacillus subtilis pyrophosphatase, used as the second conformational reference.",
+          "refs": [
+            3,
+            6
+          ]
+        }
+      ],
+      "supplementary": [
+        {
+          "pdb": "2HAW",
+          "description": "PNP substrate-analogue complex supplying the aligned analogue and Mg²⁺ positions. The PDB chemical-component code for PNP is 2PN.",
+          "refs": [
+            2,
+            4
+          ]
+        }
+      ],
+      "note": "The principal domain-motion comparison uses 1K23 and 1WPM. PNP and Mg²⁺ from 2HAW are supplementary structural context; they are not constituents of the metal-free 1WPM reference."
+    },
+    "fak-dd39": {
+      "primary": [
+        {
+          "pdb": "4GU6",
+          "description": "Human FAK catalytic-domain structure used as the receptor reference for this case.",
+          "refs": [
+            1,
+            2
+          ]
+        }
+      ],
+      "supplementary": [],
+      "note": "The ensemble comparison pairs the 4GU6-derived FAK receptor with DD-13M ligand 39 (DD39)."
+    }
+  },
+  "reference_policy": "Structural references are restricted to the user-listed primary and supplementary PDB entries and their associated primary publications. Dataset and current-work references are included separately to attribute the displayed analyses; they do not introduce additional PDB structures."
+}

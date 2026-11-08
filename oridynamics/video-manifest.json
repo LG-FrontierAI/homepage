@@ -1,6 +1,6 @@
 {
   "source": "OriDynamic_homepage.mp4",
-  "source_sha256": "374530239abddc65623608e35ec7593d1eb27e9b9708d093920281946ac6df2f",
+  "source_sha256": "f53db0bafbc2ded874959a7cadc23cbbd07f941ede2bf917d4349b18525ee47a",
   "asset": "assets/oridynamic-homepage.mp4",
   "duration_seconds": 30,
   "dimensions": [
@@ -25,6 +25,6 @@
     "verified_on": "2026-11-05",
     "usage_instructions": "https://www.scottbuckley.com.au/library/using-this-music/"
   },
-  "title": "OriDynamic — Toward biological intelligence",
+  "title": "OriDynamics — Toward biological intelligence",
   "audio_tracks": 1
 }
