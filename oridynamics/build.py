@@ -298,7 +298,7 @@ html=f'''<!doctype html>
     <p class="author-note">{author_note}</p>
   </div>
   <div class="paper-links">
-    <button class="pill" type="button" disabled title="Link will be available later">{icon('paper')}<span>Technical Report</span></button>
+    <a class="pill" href="https://arxiv.org/abs/2611.11958" target="_blank" rel="noopener noreferrer">{icon('paper')}<span>Technical Report</span></a>
     <a class="pill" href="https://github.com/LG-FrontierAI/oridynamics" target="_blank" rel="noopener noreferrer">{icon('code')}<span>Github Code</span></a>
   </div>
   <p class="hero-slogan"><span>Understanding biomolecular dynamics</span>
