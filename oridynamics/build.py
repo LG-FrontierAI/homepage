@@ -246,20 +246,26 @@ application_html=f'''<article class="result-block application-group">
 </article>'''
 
 # Keep given-name-first spelling and author order consistent with the header.
+citation = DATA['citation']
 bib_names = [author['name'] for author in authors]
 bib_author_lines = [' and '.join(bib_names[i:i + 3]) for i in range(0, len(bib_names), 3)]
 bib_authors = ' and\n            '.join(bib_author_lines)
 bib_title = textwrap.fill(
-    DATA['title'].replace('OriDynamics', '{OriDynamics}'),
+    citation['title'].replace('OriDynamics', '{OriDynamics}'),
     width=78, initial_indent='  title = {', subsequent_indent='           ',
     break_long_words=False, break_on_hyphens=False,
 ) + '},'
-bib='''@unpublished{oridynamic2026,
-TITLE_FIELD
-  author = {AUTHOR_LIST},
-  year = {2026},
-  note = {Manuscript, November 2026}
-}'''.replace('TITLE_FIELD', bib_title).replace('AUTHOR_LIST', bib_authors)
+bib = '\n'.join([
+    f'@misc{{{citation["key"]},',
+    bib_title,
+    f'  author = {{{bib_authors}}},',
+    f'  year = {{{citation["year"]}}},',
+    f'  eprint = {{{citation["eprint"]}}},',
+    f'  archivePrefix = {{{citation["archivePrefix"]}}},',
+    f'  primaryClass = {{{citation["primaryClass"]}}},',
+    f'  url = {{{citation["url"]}}}',
+    '}',
+])
 heading_parts = DATA.get('homepage_title', DATA['title']).split(' through ', 1)
 if len(heading_parts) == 2:
     heading_parts[1] = 'through ' + heading_parts[1]

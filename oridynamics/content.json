@@ -116,5 +116,15 @@
       "en_title": "Functional conformations and partner-dependent responses",
       "en": "Recovers experimentally observed alternative states and captures shifts in apo–holo conformational distributions in response to ligand or protein partners."
     }
-  ]
+  ],
+  "citation": {
+    "key": "yang2026oridynamics",
+    "title": "OriDynamics: Towards a World Model for Biomolecular Dynamics",
+    "year": "2026",
+    "eprint": "2611.11958",
+    "archivePrefix": "arXiv",
+    "primaryClass": "q-bio.BM",
+    "url": "https://arxiv.org/abs/2611.11958",
+    "verified_on": "2026-11-12"
+  }
 }
